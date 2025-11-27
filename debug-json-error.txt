@@ -1,0 +1,149 @@
+Parse Error: Expected ',' or ']' after array element in JSON at position 6408 (line 147 column 6)
+
+{
+  "summary": "Your hard drive is failing and needs immediate attention. It has damaged areas that could cause you to lose your files. Everything else looks okay.",
+  "issues": [
+    {
+      "severity": "critical",
+      "title": "Your Hard Drive Is Failing",
+      "description": "Your hard drive has bad spots that are getting worse.",
+      "whatThisMeans": "Your computer could crash or you could lose your important files.",
+      "foundEvidence": "Windows found 51 damaged areas on your hard drive today"
+    },
+    {
+      "severity": "warning",
+      "title": "Xbox Game Bar Keeps Crashing",
+      "description": "The gaming overlay crashes because of your graphics card.",
+      "whatThisMeans": "You can't use the Xbox overlay while gaming right now.",
+      "foundEvidence": "Xbox Game Bar crashed on November 15th"
+    },
+    {
+      "severity": "info",
+      "title": "Outlook Froze Once",
+      "description": "Your email program stopped responding and had to be closed.",
+      "whatThisMeans": "This was a one-time thing, not a big problem.",
+      "foundEvidence": "Outlook froze on November 13th"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "backup-files-urgently",
+      "title": "Back Up Your Important Files NOW",
+      "whyThis": "Your hard drive is failing and your files could disappear at any time.",
+      "howLong": "30 minutes to 2 hours",
+      "difficulty": "Easy",
+      "needsRestart": false,
+      "automatable": false,
+      "riskLevel": "low",
+      "steps": [
+        "Get an external hard drive or USB drive with lots of space",
+        "Plug it into your computer",
+        "Open File Explorer and go to your Documents, Pictures, Videos, and Desktop folders",
+        "Copy all important files to the external drive",
+        "Also backup any files in your Downloads folder you want to keep",
+        "Double-check everything copied over correctly"
+      ],
+      "technicalDetails": {
+        "commands": [],
+        "filesModified": [
+          "No system files modified - only copying user data"
+        ],
+        "prerequisites": [
+          "External storage device with sufficient space",
+          "USB port available"
+        ],
+        "expectedOutcome": "All important personal files will be safely copied to external storage",
+        "verification": [
+          "Open the external drive and check that all your files are there",
+          "Try opening a few files from the backup to make sure they work"
+        ],
+        "rollback": [
+          "No rollback needed - this only copies files, doesn't change anything"
+        ]
+      }
+    },
+    {
+      "id": "check-disk-errors",
+      "title": "Let Windows Try To Fix Your Hard Drive",
+      "whyThis": "Windows can sometimes repair minor damage and mark bad areas to avoid them.",
+      "howLong": "1 to 3 hours",
+      "difficulty": "Easy",
+      "needsRestart": true,
+      "automatable": true,
+      "riskLevel": "low",
+      "steps": [
+        "Click the Start button and type 'Command Prompt'",
+        "Right-click on Command Prompt and choose 'Run as administrator'",
+        "Type this command exactly: chkdsk C: /f /r",
+        "Press Enter",
+        "It will ask to schedule the scan for next restart - type Y and press Enter",
+        "Restart your computer",
+        "Windows will check your hard drive before starting up (this takes a long time)",
+        "Don't turn off your computer while it's working"
+      ],
+      "technicalDetails": {
+        "commands": [
+          "chkdsk C: /f /r"
+        ],
+        "filesModified": [
+          "May mark bad sectors on physical disk",
+          "May move data from damaged areas to healthy areas",
+          "Updates $Bitmap and $BadClus metadata files"
+        ],
+        "prerequisites": [
+          "Administrator privileges required",
+          "Computer must be restarted",
+          "At least 2-3 hours of uninterrupted time",
+          "Computer should be plugged into power (not on battery)"
+        ],
+        "expectedOutcome": "Windows will attempt to repair file system errors and map out bad sectors to prevent future use",
+        "verification": [
+          "After restart completes, check Event Viewer for Chkdsk results",
+          "Look in System log for source 'Chkdsk' to see what was repaired"
+        ],
+        "rollback": [
+          "Chkdsk cannot be undone, but it only fixes errors and marks bad areas",
+          "If computer won't start after Chkdsk, use Windows Recovery Environment"
+        ]
+      }
+    },
+    {
+      "id": "plan-hard-drive-replacement",
+      "title": "Start Planning To Replace Your Hard Drive",
+      "whyThis": "Bad blocks mean the drive is physically breaking down and will fail completely soon.",
+      "howLong": "Varies (shopping and installation)",
+      "difficulty": "Medium",
+      "needsRestart": false,
+      "automatable": false,
+      "riskLevel": "medium",
+      "steps": [
+        "Decide if you want to replace it yourself or have a professional do it",
+        "If you have a desktop computer, this is easier to do yourself",
+        "If you have a laptop, consider professional help",
+        "Buy a new hard drive or solid state drive (SSD is faster and more reliable)",
+        "You'll need to either clone your old drive or reinstall Windows on the new one",
+        "A computer repair shop can do all of this for you if it feels overwhelming"
+      ],
+      "technicalDetails": {
+        "commands": [],
+        "filesModified": [
+          "Will require complete system migration or fresh Windows installation"
+        ],
+        "prerequisites": [
+          "Purchase of new storage drive (SSD recommended)",
+          "Backup of all important data",
+          "Windows installation media or disk cloning software",
+          "Screwdrivers and technical knowledge for physical installation"
+        ],
+        "expectedOutcome": "Computer will have a new, healthy hard drive with no bad sectors",
+        "verification": [
+          "Run chkdsk on new drive - should report no errors",
+          "Check SMART status using CrystalDiskInfo - should show 'Good' health",
+          "Verify all programs and files work correctly after migration"
+        ],
+        "rollback": [
+          "Keep old drive until confident new drive is working properly",
+          "Old drive can be used as emergency backup if new drive has issues during transition"
+        ]
+      }
+    }

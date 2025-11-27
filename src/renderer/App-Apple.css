@@ -1,0 +1,1082 @@
+/* ============================================
+   PC Health Assistant - Apple Interface
+   Inspired by macOS Big Sur / Ventura Design
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Apple Colors */
+  --apple-blue: #007AFF;
+  --apple-gray: #8E8E93;
+  --apple-light-gray: #F2F2F7;
+  --apple-bg: #FFFFFF;
+  --apple-text: #000000;
+  --apple-text-secondary: #6E6E73;
+  --apple-separator: rgba(0, 0, 0, 0.1);
+  --apple-red: #FF3B30;
+  --apple-orange: #FF9500;
+  --apple-green: #34C759;
+  --apple-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: #F5F5F7;
+  color: var(--apple-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ============================================
+   HEADER - Apple Style
+   ============================================ */
+
+.app-header {
+  text-align: center;
+  padding: 60px 0 40px 0;
+  background: transparent;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-header h1 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--apple-text);
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--apple-text-secondary);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   CARDS - Apple Frosted Glass Effect
+   ============================================ */
+
+.main-content,
+.diagnostic-card,
+.issue-card,
+.fix-card,
+.chat-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-content {
+  padding: 48px;
+  margin-bottom: 32px;
+}
+
+/* ============================================
+   BUTTONS - Apple Style
+   ============================================ */
+
+button,
+.diagnostic-button,
+.fix-button {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Primary Button (Blue) */
+.diagnostic-button,
+.fix-button.primary,
+button.primary {
+  background: var(--apple-blue);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+}
+
+.diagnostic-button:hover,
+.fix-button.primary:hover {
+  background: #0051D5;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button (Gray) */
+.fix-button.secondary,
+button.secondary {
+  background: var(--apple-light-gray);
+  color: var(--apple-text);
+}
+
+.fix-button.secondary:hover {
+  background: #E5E5EA;
+}
+
+/* Danger Button (Red) */
+button.danger {
+  background: var(--apple-red);
+  color: white;
+}
+
+/* ============================================
+   DIAGNOSTIC GRID - Apple Layout
+   ============================================ */
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.diagnostic-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  background: white;
+  border: 1px solid var(--apple-separator);
+}
+
+.diagnostic-button .icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+/* ============================================
+   ISSUE CARDS - Apple Style
+   ============================================ */
+
+.issues-section {
+  margin-top: 32px;
+}
+
+.issues-section h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  color: var(--apple-text);
+}
+
+.issue-card {
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--apple-blue);
+}
+
+.issue-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.issue-card.priority-immediate {
+  border-left-color: var(--apple-red);
+  background: rgba(255, 59, 48, 0.03);
+}
+
+.issue-card.priority-high {
+  border-left-color: var(--apple-orange);
+  background: rgba(255, 149, 0, 0.03);
+}
+
+.issue-card.priority-medium {
+  border-left-color: var(--apple-blue);
+}
+
+.issue-card.priority-low {
+  border-left-color: var(--apple-gray);
+  opacity: 0.85;
+}
+
+.issue-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.issue-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  flex: 1;
+  color: var(--apple-text);
+}
+
+.issue-body {
+  color: var(--apple-text-secondary);
+  line-height: 1.6;
+}
+
+.issue-description,
+.issue-impact {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.issue-evidence {
+  font-size: 14px;
+  padding: 12px;
+  background: var(--apple-light-gray);
+  border-radius: 8px;
+  margin-top: 12px;
+  color: var(--apple-text-secondary);
+}
+
+/* ============================================
+   BADGES - Apple Style
+   ============================================ */
+
+.severity-badge,
+.priority-badge,
+.confidence-badge,
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.severity-badge.critical,
+.priority-badge.priority-immediate {
+  background: rgba(255, 59, 48, 0.15);
+  color: var(--apple-red);
+}
+
+.severity-badge.warning,
+.priority-badge.priority-high {
+  background: rgba(255, 149, 0, 0.15);
+  color: var(--apple-orange);
+}
+
+.severity-badge.info,
+.priority-badge.priority-medium {
+  background: rgba(0, 122, 255, 0.15);
+  color: var(--apple-blue);
+}
+
+.priority-badge.priority-low {
+  background: rgba(142, 142, 147, 0.15);
+  color: var(--apple-gray);
+}
+
+.confidence-badge {
+  background: rgba(52, 199, 89, 0.15);
+  color: var(--apple-green);
+  font-weight: 600;
+}
+
+/* Pulse animation for urgent items */
+@keyframes pulse-urgent {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.priority-badge.priority-immediate {
+  animation: pulse-urgent 2s ease-in-out infinite;
+}
+
+/* ============================================
+   FIX CARDS - Apple Style
+   ============================================ */
+
+.fixes-section {
+  margin-top: 40px;
+}
+
+.fixes-section h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.fix-card {
+  padding: 28px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.fix-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.fix-header {
+  margin-bottom: 20px;
+}
+
+.fix-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.fix-title-row h4 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+.fix-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 13px;
+  padding: 6px 12px;
+  background: var(--apple-light-gray);
+  color: var(--apple-text-secondary);
+}
+
+.badge.risk-level.low {
+  background: rgba(52, 199, 89, 0.15);
+  color: var(--apple-green);
+}
+
+.badge.risk-level.medium {
+  background: rgba(255, 149, 0, 0.15);
+  color: var(--apple-orange);
+}
+
+.badge.risk-level.high {
+  background: rgba(255, 59, 48, 0.15);
+  color: var(--apple-red);
+}
+
+.badge.automatable {
+  background: linear-gradient(135deg, var(--apple-blue), #5E5CE6);
+  color: white;
+  font-weight: 600;
+}
+
+/* ============================================
+   TIME TO FIX INDICATOR
+   ============================================ */
+
+.time-to-fix {
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.time-to-fix.priority-immediate {
+  background: rgba(255, 59, 48, 0.1);
+  color: var(--apple-red);
+}
+
+.time-to-fix.priority-high {
+  background: rgba(255, 149, 0, 0.1);
+  color: var(--apple-orange);
+}
+
+.time-to-fix.priority-medium {
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--apple-blue);
+}
+
+.time-to-fix.priority-low {
+  background: rgba(142, 142, 147, 0.1);
+  color: var(--apple-gray);
+}
+
+/* ============================================
+   APPROVAL NOTICE - Apple Style
+   ============================================ */
+
+.approval-notice {
+  background: rgba(0, 122, 255, 0.08);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--apple-blue);
+}
+
+.approval-icon {
+  font-size: 24px;
+}
+
+/* ============================================
+   RISK EXPLANATION
+   ============================================ */
+
+.risk-explanation {
+  padding: 16px;
+  border-radius: 12px;
+  margin: 16px 0;
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.risk-explanation.low {
+  background: rgba(52, 199, 89, 0.08);
+  border: 1px solid rgba(52, 199, 89, 0.2);
+  color: var(--apple-text-secondary);
+}
+
+.risk-explanation.medium {
+  background: rgba(255, 149, 0, 0.08);
+  border: 1px solid rgba(255, 149, 0, 0.2);
+  color: var(--apple-text-secondary);
+}
+
+.risk-explanation.high {
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  color: var(--apple-text-secondary);
+}
+
+.risk-exp-icon {
+  font-size: 20px;
+}
+
+/* ============================================
+   CHAT INTERFACE - Apple Messages Style
+   ============================================ */
+
+.chat-container {
+  padding: 24px;
+  margin-top: 32px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-message {
+  display: flex;
+  gap: 12px;
+  max-width: 80%;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+}
+
+.message-bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.chat-message.user .message-bubble {
+  background: var(--apple-blue);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.assistant .message-bubble {
+  background: var(--apple-light-gray);
+  color: var(--apple-text);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--apple-separator);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+/* ============================================
+   PROGRESS INDICATORS - Apple Style
+   ============================================ */
+
+.progress-container {
+  margin: 24px 0;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--apple-light-gray);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--apple-blue);
+  border-radius: 3px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--apple-text-secondary);
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ============================================
+   LOADING SPINNER - Apple Style
+   ============================================ */
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 122, 255, 0.2);
+  border-top-color: var(--apple-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   ADMIN WARNING BANNER
+   ============================================ */
+
+.admin-warning-banner {
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.admin-warning-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-warning-icon {
+  font-size: 28px;
+}
+
+.admin-warning-text strong {
+  color: var(--apple-red);
+  font-size: 17px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.admin-warning-text p {
+  color: var(--apple-text-secondary);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ============================================
+   SCROLLBAR - Apple Style
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 16px;
+  }
+
+  .app-header h1 {
+    font-size: 40px;
+  }
+
+  .tagline {
+    font-size: 17px;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .issues-section h3,
+  .fixes-section h3 {
+    font-size: 24px;
+  }
+
+  .issue-card,
+  .fix-card {
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   TRANSITIONS & ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.issue-card,
+.fix-card,
+.diagnostic-button {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger animation for lists */
+.issue-card:nth-child(1) { animation-delay: 0.05s; }
+.issue-card:nth-child(2) { animation-delay: 0.1s; }
+.issue-card:nth-child(3) { animation-delay: 0.15s; }
+.issue-card:nth-child(4) { animation-delay: 0.2s; }
+.issue-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* ============================================
+   SUMMARY SECTION
+   ============================================ */
+
+.summary-section {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(94, 92, 230, 0.05));
+  border: 1px solid rgba(0, 122, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.summary-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--apple-text);
+}
+
+.summary-section p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--apple-text-secondary);
+}
+
+/* ============================================
+   NO ISSUES FOUND
+   ============================================ */
+
+.no-issues-found {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--apple-text-secondary);
+}
+
+.no-issues-found p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.no-issues-found p:first-child {
+  font-size: 21px;
+  color: var(--apple-green);
+  font-weight: 600;
+}
+
+/* ============================================
+   ADDITIONAL COMPONENTS
+   ============================================ */
+
+.app-main {
+  margin-top: 32px;
+}
+
+.history-nav-button {
+  padding: 8px 16px;
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  border-radius: 10px;
+  color: var(--apple-blue);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-nav-button:hover {
+  background: rgba(0, 122, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.fix-approval-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-center;
+  z-index: 1000;
+}
+
+.fix-approval-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.fix-approval-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.risk-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fix-approval-content {
+  margin-bottom: 24px;
+}
+
+.fix-description {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.fix-detail-item {
+  padding: 12px;
+  background: var(--apple-light-gray);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.fix-approval-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.reject-button,
+.approve-button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.reject-button {
+  background: var(--apple-light-gray);
+  color: var(--apple-text);
+}
+
+.approve-button {
+  background: var(--apple-blue);
+  color: white;
+}
+
+.app-footer {
+  margin-top: 60px;
+  padding: 32px 0;
+  border-top: 1px solid var(--apple-separator);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--apple-text-secondary);
+  font-size: 15px;
+}
+
+.footer-link {
+  color: var(--apple-blue);
+  text-decoration: none;
+}
+
+.ai-assistant-featured {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.08), rgba(94, 92, 230, 0.08));
+  border: 1px solid rgba(0, 122, 255, 0.15);
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.ai-icon {
+  font-size: 64px;
+}
+
+.ai-assistant-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.ai-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, var(--apple-blue), #5E5CE6);
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ai-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.ai-assistant-cta {
+  padding: 16px 40px;
+  background: var(--apple-blue);
+  color: white;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  background: var(--apple-separator);
+  margin: 48px 0;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.problem-card {
+  background: white;
+  border: 1px solid var(--apple-separator);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.problem-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.problem-icon {
+  font-size: 48px;
+}
+
+.trust-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--apple-separator);
+  border-radius: 16px;
+}
+
+.diagnosing-view {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.read-only-banner {
+  background: rgba(0, 122, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  display: inline-flex;
+  gap: 12px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 122, 255, 0.2);
+  border-top-color: var(--apple-blue);
+  border-radius: 50%;
+  margin: 0 auto 32px;
+  animation: spin 1s linear infinite;
+}
+
+.progress-list {
+  max-width: 500px;
+  margin: 32px auto;
+}
+
+.progress-item {
+  padding: 12px 20px;
+  background: var(--apple-light-gray);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.progress-item.active {
+  opacity: 1;
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--apple-blue);
+}
+
+.summary-box {
+  background: white;
+  border: 1px solid var(--apple-separator);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.summary-findings,
+.summary-recommendations {
+  list-style: none;
+}
+
+.summary-findings li {
+  padding: 12px;
+  background: var(--apple-light-gray);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.risk-guide {
+  padding: 24px;
+  background: var(--apple-light-gray);
+  border-radius: 16px;
+}
+
+.advanced-toggle-button {
+  padding: 10px 20px;
+  background: var(--apple-light-gray);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,89 @@
+{
+  "timestamp": "2025-11-18T22:52:47.238Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "passRate": "100.0"
+  },
+  "results": [
+    {
+      "type": "crash",
+      "description": "Program/Game Keeps Crashing",
+      "success": true,
+      "duration": "64.21",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "Your hard drive is failing with many damaged spots, and your graphics driver is causing Xbox Game Bar to crash. This is serious and needs immediate attention.",
+        "issueCount": 3,
+        "fixCount": 5
+      }
+    },
+    {
+      "type": "slow",
+      "description": "Computer is Slow",
+      "success": true,
+      "duration": "16.95",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "I couldn't finish checking your computer yet, so I can't tell what's making it slow. The diagnostic tools are still being set up.",
+        "issueCount": 1,
+        "fixCount": 2
+      }
+    },
+    {
+      "type": "error",
+      "description": "Getting Error Messages",
+      "success": true,
+      "duration": "40.74",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "Your hard drive is physically failing with many damaged areas. This is serious and you need to back up your important files right away before the drive stops working completely.",
+        "issueCount": 3,
+        "fixCount": 4
+      }
+    },
+    {
+      "type": "hardware",
+      "description": "Hardware Not Working",
+      "success": true,
+      "duration": "5.03",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "Good news! Your graphics card is working fine and the driver is up to date. Everything looks healthy from what we checked.",
+        "issueCount": 1,
+        "fixCount": 0
+      }
+    },
+    {
+      "type": "network",
+      "description": "Internet Problems",
+      "success": true,
+      "duration": "15.05",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "Your internet is working fine! The confusing message about missing gateway is a false alarm because you're actually online with great speed.",
+        "issueCount": 2,
+        "fixCount": 1
+      }
+    },
+    {
+      "type": "full-scan",
+      "description": "Complete System Scan",
+      "success": true,
+      "duration": "53.97",
+      "errors": [],
+      "warnings": [],
+      "data": {
+        "summary": "Your hard drive is failing and needs immediate attention. It has many damaged spots that could cause you to lose your files.",
+        "issueCount": 3,
+        "fixCount": 4
+      }
+    }
+  ]
+}

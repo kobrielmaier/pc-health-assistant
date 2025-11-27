@@ -1,0 +1,2190 @@
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Testing diagnostic type: full-scan
+
+Initializing Anthropic client...
+API Key present: true
+API Key length: 108
+Client initialized: true
+Audit logger initialized: true
+Starting investigation for problem type: full-scan
+Running playbook: Complete System Scan
+  - Executing step: checkEventLogs
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkEventLogs
+Investigating Event Logs...
+  - checkEventLogs completed: {
+  errors: [
+    {
+      logName: 'Application',
+      time: '/Date(1763619246000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n' +
+        '.\r\n',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763619246000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n' +
+        ']\r\n',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763619246000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n' +
+        '.\r\n',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763619246000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n' +
+        ']\r\n',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763618109000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 19256.  Message ID: [0x2509].',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763612755000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 13972.  Message ID: [0x2509].',
+      hoursAgo: 17,
+      daysAgo: 0.7,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763602931000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 14268.  Message ID: [0x2509].',
+      hoursAgo: 20,
+      daysAgo: 0.8,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763587827000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 8168.  Message ID: [0x2509].',
+      hoursAgo: 24,
+      daysAgo: 1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763579167000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 4476.  Message ID: [0x2509].',
+      hoursAgo: 26,
+      daysAgo: 1.1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763578656000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 10596.  Message ID: [0x2509].',
+      hoursAgo: 26,
+      daysAgo: 1.1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763578496000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 21464.  Message ID: [0x2509].',
+      hoursAgo: 26,
+      daysAgo: 1.1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763578305000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 16556.  Message ID: [0x2509].',
+      hoursAgo: 26,
+      daysAgo: 1.1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763578233000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 4620.  Message ID: [0x2509].',
+      hoursAgo: 26,
+      daysAgo: 1.1,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763518274000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n' +
+        '.\r\n',
+      hoursAgo: 43,
+      daysAgo: 1.8,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763518274000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n' +
+        ']\r\n',
+      hoursAgo: 43,
+      daysAgo: 1.8,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763518274000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n' +
+        '.\r\n',
+      hoursAgo: 43,
+      daysAgo: 1.8,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763518274000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n' +
+        ']\r\n',
+      hoursAgo: 43,
+      daysAgo: 1.8,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763507976000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 23368.  Message ID: [0x2509].',
+      hoursAgo: 46,
+      daysAgo: 1.9,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763276156000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n' +
+        '.\r\n',
+      hoursAgo: 110,
+      daysAgo: 4.6,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763276156000)/',
+      source: 'VSS',
+      message: 'Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n' +
+        ']\r\n',
+      hoursAgo: 110,
+      daysAgo: 4.6,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763180931000)/',
+      source: 'Application Error',
+      message: 'Faulting application name: XboxGameBarWidgets.exe, version: 2511.1001.12.0, time stamp: 0x690d3b8c\r\n' +
+        'Faulting module name: nvwgf2umx.dll, version: 32.0.15.8180, time stamp: 0x69026684\r\n' +
+        'Exception code: 0xc0000094\r\n' +
+        'Fault offset: 0x000000000014670a\r\n' +
+        'Faulting process id: 0x45f8\r\n' +
+        'Faulting application start time: 0x01dc55e7d0bfdfb7\r\n' +
+        'Faulting application path: C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2511.1001.12.0_x64__8wekyb3d8bbwe\\XboxGameBarWidgets.exe\r\n' +
+        'Faulting module path: C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_20ae8f14a487d5db\\nvwgf2umx.dll\r\n' +
+        'Report Id: 202e4c73-5a5e-4b1b-b5e6-b61a1ad3b0bd\r\n' +
+        'Faulting package full name: Microsoft.GamingApp_2511.1001.12.0_x64__8wekyb3d8bbwe\r\n' +
+        'Faulting package-relative application ID: Microsoft.Xbox.WidgetsApp',
+      hoursAgo: 137,
+      daysAgo: 5.7,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763165452000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 21864.  Message ID: [0x2509].',
+      hoursAgo: 141,
+      daysAgo: 5.9,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763165428000)/',
+      source: '.NET Runtime',
+      message: '.NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 25384.  Message ID: [0x2509].',
+      hoursAgo: 141,
+      daysAgo: 5.9,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'Application',
+      time: '/Date(1763157521000)/',
+      source: 'Application Hang',
+      message: 'The program olk.exe version 1.2025.1027.200 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.\r\n' +
+        '\r\n' +
+        'Process ID: 4558\r\n' +
+        '\r\n' +
+        'Start Time: 01dc537ac2f59397\r\n' +
+        '\r\n' +
+        'Termination Time: 4294967295\r\n' +
+        '\r\n' +
+        'Application Path: C:\\Program Files\\WindowsApps\\Microsoft.OutlookForWindows_1.2025.1027.200_x64__8wekyb3d8bbwe\\olk.exe\r\n' +
+        '\r\n' +
+        'Report Id: 6b610e9e-517e-45de-947e-1c9b9907191c\r\n' +
+        '\r\n' +
+        'Faulting package full name: Microsoft.OutlookForWindows_1.2025.1027.200_x64__8wekyb3d8bbwe\r\n' +
+        '\r\n' +
+        'Faulting package-relative application ID: Microsoft.OutlookforWindows\r\n' +
+        '\r\n' +
+        'Hang type: Quiesce\r\n',
+      hoursAgo: 143,
+      daysAgo: 6,
+      isRecent: false,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763619581000)/',
+      source: 'Microsoft-Windows-TPM-WMI',
+      message: 'Secure Boot CA/keys need to be updated. This device signature information is included here.\r\n' +
+        'DeviceAttributes: BaseBoardManufacturer:Gigabyte Technology Co., Ltd.;FirmwareManufacturer:American Megatrends Inc.;FirmwareVersion:F30;OEMModelNumber:X570 AORUS ELITE WIFI;OEMModelBaseBoard:X570 AORUS ELITE WIFI;OEMModelSystemFamily:X570 MB;OEMManufacturerName:Gigabyte Technology Co., Ltd.;OEMModelSKU:Default string;OSArchitecture:amd64;\r\n' +
+        'BucketId: bd4360e9fca05b8e9fb75133c04ab8e500800c48c609b24ddce4987b8b36d3b5\r\n' +
+        'BucketConfidenceLevel: \r\n' +
+        'UpdateType: 0\r\n' +
+        'HResult: 0',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763619385000)/',
+      source: 'Service Control Manager',
+      message: 'The Steam Client Service service failed to start due to the following error: \r\n' +
+        '%%1053',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763619385000)/',
+      source: 'Service Control Manager',
+      message: 'A timeout was reached (60000 milliseconds) while waiting for the Steam Client Service service to connect.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618007000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618006000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618006000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618006000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618005000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618004000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618003000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618002000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618001000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618000000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618000000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618000000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618000000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763618000000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617999000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617999000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617998000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617997000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617997000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617997000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617997000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617997000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617996000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617996000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    },
+    {
+      logName: 'System',
+      time: '/Date(1763617996000)/',
+      source: 'disk',
+      message: 'The device, \\Device\\Harddisk0\\DR0, has a bad block.',
+      hoursAgo: 15,
+      daysAgo: 0.6,
+      isRecent: true,
+      isOld: false
+    }
+  ],
+  warnings: [],
+  patterns: []
+}
+  - Executing step: findCrashDumps
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for findCrashDumps
+Investigating crash dumps...
+  - findCrashDumps completed: {
+  crashDumpsFound: [
+    {
+      path: 'C:\\Users\\kobri\\AppData\\Local\\CrashDumps\\XboxGameBarWidgets.exe.17912.dmp',
+      filename: 'XboxGameBarWidgets.exe.17912.dmp',
+      size: 45364179,
+      created: 2025-11-15T04:28:53.061Z,
+      modified: 2025-11-15T04:28:53.413Z,
+      age: 5
+    }
+  ],
+  locations: [
+    'C:\\Windows\\Minidump',
+    'C:\\Users\\kobri\\AppData\\Local\\CrashDumps',
+    'C:\\Users\\kobri\\AppData\\Roaming\\*\\Saved\\Crashes',
+    'C:\\Users\\kobri\\AppData\\Local\\*\\Crashes'
+  ],
+  analysis: []
+}
+  - Executing step: checkDrivers
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkDrivers
+Investigating drivers...
+  - checkDrivers completed: {
+  drivers: [
+    {
+      type: 'GPU',
+      name: 'NVIDIA GeForce RTX 2060',
+      version: '32.0.15.8180',
+      date: '2025-10-29T00:00:00.000Z',
+      ageInDays: 22
+    }
+  ],
+  outdatedDrivers: [],
+  problematicDrivers: []
+}
+  - Executing step: checkSystemResources
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkSystemResources
+  - checkSystemResources completed: {
+  findings: [ 'System resource check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: analyzeRecentChanges
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for analyzeRecentChanges
+  - analyzeRecentChanges completed: {
+  findings: [ 'Recent changes analysis - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: checkStartupPrograms
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkStartupPrograms
+  - checkStartupPrograms completed: {
+  findings: [ 'Startup programs check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: analyzeDiskSpace
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for analyzeDiskSpace
+Investigating disk...
+Disk health check results: [
+  {
+    friendlyName: 'Samsung SSD 980 PRO 2TB',
+    operationalStatus: 'OK',
+    healthStatus: 'Healthy',
+    mediaType: 'SSD',
+    isHealthy: true
+  }
+]
+  - analyzeDiskSpace completed: {
+  disks: [
+    {
+      name: '1999722508288',
+      freeSpace: 655454437376,
+      totalSpace: NaN,
+      freeSpaceGB: '610.44',
+      totalSpaceGB: 'NaN'
+    }
+  ],
+  lowSpaceWarnings: [],
+  healthStatus: [
+    {
+      friendlyName: 'Samsung SSD 980 PRO 2TB',
+      operationalStatus: 'OK',
+      healthStatus: 'Healthy',
+      mediaType: 'SSD',
+      isHealthy: true
+    }
+  ],
+  recommendations: []
+}
+  - Executing step: checkRAMUsage
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkRAMUsage
+  - checkRAMUsage completed: { findings: [ 'RAM usage check - Coming soon' ], recommendations: [] }
+  - Executing step: analyzeDiskHealth
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for analyzeDiskHealth
+  - analyzeDiskHealth completed: {
+  findings: [ 'Disk health analysis - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: checkBackgroundProcesses
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkBackgroundProcesses
+  - checkBackgroundProcesses completed: {
+  findings: [ 'Background process check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: scanTempFiles
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for scanTempFiles
+  - scanTempFiles completed: { findings: [ 'Temp files scan - Coming soon' ], recommendations: [] }
+  - Executing step: checkDeviceManager
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkDeviceManager
+  - checkDeviceManager completed: {
+  findings: [ 'Device Manager check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: checkDrivers
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkDrivers
+Investigating drivers...
+  - checkDrivers completed: {
+  drivers: [
+    {
+      type: 'GPU',
+      name: 'NVIDIA GeForce RTX 2060',
+      version: '32.0.15.8180',
+      date: '2025-10-29T00:00:00.000Z',
+      ageInDays: 22
+    }
+  ],
+  outdatedDrivers: [],
+  problematicDrivers: []
+}
+  - Executing step: checkHardwareHealth
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkHardwareHealth
+  - checkHardwareHealth completed: {
+  findings: [ 'Hardware health check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: checkUSBDevices
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkUSBDevices
+  - checkUSBDevices completed: {
+  findings: [ 'USB devices check - Coming soon' ],
+  recommendations: []
+}
+  - Executing step: testConnectivity
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for testConnectivity
+NetworkInvestigator: Starting check for testConnectivity
+Step config: {
+  pingTargets: [ '8.8.8.8', '1.1.1.1' ],
+  checkDNS: true,
+  checkSpeed: true
+}
+Options: {}
+→ Calling testConnectivity()
+Testing internet connectivity...
+Pinging 8.8.8.8...
+[EXEC] Running command: ping -n 4 8.8.8.8 (timeout: 15000ms)
+[EXEC] ✓ Command succeeded: ping -n 4 8.8.8.8
+[EXEC] stdout length: 424, stderr length: 0
+Ping result: 
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=17ms TTL=252
+Reply from 8.8.8.8: bytes=32 time=18ms TTL=252
+Reply from 8.8.8.8: bytes=32 time=21ms TTL=252
+Reply from 8.8
+Testing DNS...
+[EXEC] Running command: nslookup google.com (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: nslookup google.com
+[EXEC] stdout length: 132, stderr length: 28
+Connectivity test complete: [
+  'Internet connection is excellent (17ms response time)',
+  'DNS (website name lookup) is working correctly',
+  'For accurate speed: Visit fast.com or speedtest.net in your browser'
+]
+✓ testConnectivity completed successfully: {
+  findings: [
+    'Internet connection is excellent (17ms response time)',
+    'DNS (website name lookup) is working correctly',
+    'For accurate speed: Visit fast.com or speedtest.net in your browser'
+  ],
+  recommendations: []
+}
+  - testConnectivity completed: {
+  findings: [
+    'Internet connection is excellent (17ms response time)',
+    'DNS (website name lookup) is working correctly',
+    'For accurate speed: Visit fast.com or speedtest.net in your browser'
+  ],
+  recommendations: []
+}
+  - Executing step: checkNetworkAdapters
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkNetworkAdapters
+NetworkInvestigator: Starting check for checkNetworkAdapters
+Step config: { checkDrivers: true, checkIPConfig: true }
+Options: {}
+→ Calling checkNetworkAdapters()
+Checking network adapters...
+[EXEC] Running command: ipconfig (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: ipconfig
+[EXEC] stdout length: 1216, stderr length: 0
+ipconfig result: 
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Wireless LAN adapter Local Area Conn
+Network adapter check complete: [ 'Network adapter is missing gateway - cannot reach internet' ]
+✓ checkNetworkAdapters completed successfully: {
+  findings: [ 'Network adapter is missing gateway - cannot reach internet' ],
+  recommendations: [
+    'Restart your network adapter',
+    'Check network cable is plugged in',
+    'Restart your router'
+  ]
+}
+  - checkNetworkAdapters completed: {
+  findings: [ 'Network adapter is missing gateway - cannot reach internet' ],
+  recommendations: [
+    'Restart your network adapter',
+    'Check network cable is plugged in',
+    'Restart your router'
+  ]
+}
+  - Executing step: checkFirewall
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkFirewall
+NetworkInvestigator: Starting check for checkFirewall
+Step config: { checkRules: true, checkBlockedApps: true }
+Options: {}
+→ Calling checkFirewall()
+[EXEC] Running command: netsh advfirewall show allprofiles state (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: netsh advfirewall show allprofiles state
+[EXEC] stdout length: 437, stderr length: 0
+[EXEC] Running command: netsh advfirewall firewall show rule name=all | findstr "Block" (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: netsh advfirewall firewall show rule name=all | findstr "Block"
+[EXEC] stdout length: 360, stderr length: 0
+✓ checkFirewall completed successfully: {
+  findings: [
+    'Windows Firewall is enabled and protecting your computer',
+    'Some firewall rules are blocking connections'
+  ],
+  recommendations: []
+}
+  - checkFirewall completed: {
+  findings: [
+    'Windows Firewall is enabled and protecting your computer',
+    'Some firewall rules are blocking connections'
+  ],
+  recommendations: []
+}
+  - Executing step: checkProxySettings
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+NetworkInvestigator initialized. Platform: win32
+  - Investigator loaded for checkProxySettings
+NetworkInvestigator: Starting check for checkProxySettings
+Step config: { includeVPN: true }
+Options: {}
+→ Calling checkProxySettings()
+[EXEC] Running command: netsh winhttp show proxy (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: netsh winhttp show proxy
+[EXEC] stdout length: 77, stderr length: 0
+[EXEC] Running command: ipconfig /all (timeout: 10000ms)
+[EXEC] ✓ Command succeeded: ipconfig /all
+[EXEC] stdout length: 3455, stderr length: 0
+✓ checkProxySettings completed successfully: {
+  findings: [ 'No proxy server configured - direct internet connection' ],
+  recommendations: []
+}
+  - checkProxySettings completed: {
+  findings: [ 'No proxy server configured - direct internet connection' ],
+  recommendations: []
+}
+Playbook execution complete. Results: {
+  "checkEventLogs": {
+    "errors": [
+      {
+        "logName": "Application",
+        "time": "/Date(1763619246000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n.\r\n",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763619246000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n]\r\n",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763619246000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n.\r\n",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763619246000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n]\r\n",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763618109000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 19256.  Message ID: [0x2509].",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763612755000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 13972.  Message ID: [0x2509].",
+        "hoursAgo": 17,
+        "daysAgo": 0.7,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763602931000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 14268.  Message ID: [0x2509].",
+        "hoursAgo": 20,
+        "daysAgo": 0.8,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763587827000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 8168.  Message ID: [0x2509].",
+        "hoursAgo": 24,
+        "daysAgo": 1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763579167000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 4476.  Message ID: [0x2509].",
+        "hoursAgo": 26,
+        "daysAgo": 1.1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763578656000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 10596.  Message ID: [0x2509].",
+        "hoursAgo": 26,
+        "daysAgo": 1.1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763578496000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 21464.  Message ID: [0x2509].",
+        "hoursAgo": 26,
+        "daysAgo": 1.1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763578305000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 16556.  Message ID: [0x2509].",
+        "hoursAgo": 26,
+        "daysAgo": 1.1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763578233000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 4620.  Message ID: [0x2509].",
+        "hoursAgo": 26,
+        "daysAgo": 1.1,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763518274000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n.\r\n",
+        "hoursAgo": 43,
+        "daysAgo": 1.8,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763518274000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n]\r\n",
+        "hoursAgo": 43,
+        "daysAgo": 1.8,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763518274000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n.\r\n",
+        "hoursAgo": 43,
+        "daysAgo": 1.8,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763518274000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n]\r\n",
+        "hoursAgo": 43,
+        "daysAgo": 1.8,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763507976000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 23368.  Message ID: [0x2509].",
+        "hoursAgo": 46,
+        "daysAgo": 1.9,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763276156000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.\r\n.\r\n",
+        "hoursAgo": 110,
+        "daysAgo": 4.6,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763276156000)/",
+        "source": "VSS",
+        "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.\r\n]\r\n",
+        "hoursAgo": 110,
+        "daysAgo": 4.6,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763180931000)/",
+        "source": "Application Error",
+        "message": "Faulting application name: XboxGameBarWidgets.exe, version: 2511.1001.12.0, time stamp: 0x690d3b8c\r\nFaulting module name: nvwgf2umx.dll, version: 32.0.15.8180, time stamp: 0x69026684\r\nException code: 0xc0000094\r\nFault offset: 0x000000000014670a\r\nFaulting process id: 0x45f8\r\nFaulting application start time: 0x01dc55e7d0bfdfb7\r\nFaulting application path: C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2511.1001.12.0_x64__8wekyb3d8bbwe\\XboxGameBarWidgets.exe\r\nFaulting module path: C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_20ae8f14a487d5db\\nvwgf2umx.dll\r\nReport Id: 202e4c73-5a5e-4b1b-b5e6-b61a1ad3b0bd\r\nFaulting package full name: Microsoft.GamingApp_2511.1001.12.0_x64__8wekyb3d8bbwe\r\nFaulting package-relative application ID: Microsoft.Xbox.WidgetsApp",
+        "hoursAgo": 137,
+        "daysAgo": 5.7,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763165452000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 21864.  Message ID: [0x2509].",
+        "hoursAgo": 141,
+        "daysAgo": 5.9,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763165428000)/",
+        "source": ".NET Runtime",
+        "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 25384.  Message ID: [0x2509].",
+        "hoursAgo": 141,
+        "daysAgo": 5.9,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "Application",
+        "time": "/Date(1763157521000)/",
+        "source": "Application Hang",
+        "message": "The program olk.exe version 1.2025.1027.200 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.\r\n\r\nProcess ID: 4558\r\n\r\nStart Time: 01dc537ac2f59397\r\n\r\nTermination Time: 4294967295\r\n\r\nApplication Path: C:\\Program Files\\WindowsApps\\Microsoft.OutlookForWindows_1.2025.1027.200_x64__8wekyb3d8bbwe\\olk.exe\r\n\r\nReport Id: 6b610e9e-517e-45de-947e-1c9b9907191c\r\n\r\nFaulting package full name: Microsoft.OutlookForWindows_1.2025.1027.200_x64__8wekyb3d8bbwe\r\n\r\nFaulting package-relative application ID: Microsoft.OutlookforWindows\r\n\r\nHang type: Quiesce\r\n",
+        "hoursAgo": 143,
+        "daysAgo": 6,
+        "isRecent": false,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763619581000)/",
+        "source": "Microsoft-Windows-TPM-WMI",
+        "message": "Secure Boot CA/keys need to be updated. This device signature information is included here.\r\nDeviceAttributes: BaseBoardManufacturer:Gigabyte Technology Co., Ltd.;FirmwareManufacturer:American Megatrends Inc.;FirmwareVersion:F30;OEMModelNumber:X570 AORUS ELITE WIFI;OEMModelBaseBoard:X570 AORUS ELITE WIFI;OEMModelSystemFamily:X570 MB;OEMManufacturerName:Gigabyte Technology Co., Ltd.;OEMModelSKU:Default string;OSArchitecture:amd64;\r\nBucketId: bd4360e9fca05b8e9fb75133c04ab8e500800c48c609b24ddce4987b8b36d3b5\r\nBucketConfidenceLevel: \r\nUpdateType: 0\r\nHResult: 0",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763619385000)/",
+        "source": "Service Control Manager",
+        "message": "The Steam Client Service service failed to start due to the following error: \r\n%%1053",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763619385000)/",
+        "source": "Service Control Manager",
+        "message": "A timeout was reached (60000 milliseconds) while waiting for the Steam Client Service service to connect.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618007000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618006000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618006000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618006000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618005000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618004000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618003000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618002000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618001000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618000000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618000000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618000000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618000000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763618000000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617999000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617999000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617998000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617997000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617997000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617997000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617997000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617997000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617996000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617996000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      },
+      {
+        "logName": "System",
+        "time": "/Date(1763617996000)/",
+        "source": "disk",
+        "message": "The device, \\Device\\Harddisk0\\DR0, has a bad block.",
+        "hoursAgo": 15,
+        "daysAgo": 0.6,
+        "isRecent": true,
+        "isOld": false
+      }
+    ],
+    "warnings": [],
+    "patterns": []
+  },
+  "findCrashDumps": {
+    "crashDumpsFound": [
+      {
+        "path": "C:\\Users\\kobri\\AppData\\Local\\CrashDumps\\XboxGameBarWidgets.exe.17912.dmp",
+        "filename": "XboxGameBarWidgets.exe.17912.dmp",
+        "size": 45364179,
+        "created": "2025-11-15T04:28:53.061Z",
+        "modified": "2025-11-15T04:28:53.413Z",
+        "age": 5
+      }
+    ],
+    "locations": [
+      "C:\\Windows\\Minidump",
+      "C:\\Users\\kobri\\AppData\\Local\\CrashDumps",
+      "C:\\Users\\kobri\\AppData\\Roaming\\*\\Saved\\Crashes",
+      "C:\\Users\\kobri\\AppData\\Local\\*\\Crashes"
+    ],
+    "analysis": []
+  },
+  "checkDrivers": {
+    "drivers": [
+      {
+        "type": "GPU",
+        "name": "NVIDIA GeForce RTX 2060",
+        "version": "32.0.15.8180",
+        "date": "2025-10-29T00:00:00.000Z",
+        "ageInDays": 22
+      }
+    ],
+    "outdatedDrivers": [],
+    "problematicDrivers": []
+  },
+  "checkSystemResources": {
+    "findings": [
+      "System resource check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "analyzeRecentChanges": {
+    "findings": [
+      "Recent changes analysis - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "checkStartupPrograms": {
+    "findings": [
+      "Startup programs check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "analyzeDiskSpace": {
+    "disks": [
+      {
+        "name": "1999722508288",
+        "freeSpace": 655454437376,
+        "totalSpace": null,
+        "freeSpaceGB": "610.44",
+        "totalSpaceGB": "NaN"
+      }
+    ],
+    "lowSpaceWarnings": [],
+    "healthStatus": [
+      {
+        "friendlyName": "Samsung SSD 980 PRO 2TB",
+        "operationalStatus": "OK",
+        "healthStatus": "Healthy",
+        "mediaType": "SSD",
+        "isHealthy": true
+      }
+    ],
+    "recommendations": []
+  },
+  "checkRAMUsage": {
+    "findings": [
+      "RAM usage check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "analyzeDiskHealth": {
+    "findings": [
+      "Disk health analysis - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "checkBackgroundProcesses": {
+    "findings": [
+      "Background process check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "scanTempFiles": {
+    "findings": [
+      "Temp files scan - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "checkDeviceManager": {
+    "findings": [
+      "Device Manager check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "checkHardwareHealth": {
+    "findings": [
+      "Hardware health check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "checkUSBDevices": {
+    "findings": [
+      "USB devices check - Coming soon"
+    ],
+    "recommendations": []
+  },
+  "testConnectivity": {
+    "findings": [
+      "Internet connection is excellent (17ms response time)",
+      "DNS (website name lookup) is working correctly",
+      "For accurate speed: Visit fast.com or speedtest.net in your browser"
+    ],
+    "recommendations": []
+  },
+  "checkNetworkAdapters": {
+    "findings": [
+      "Network adapter is missing gateway - cannot reach internet"
+    ],
+    "recommendations": [
+      "Restart your network adapter",
+      "Check network cable is plugged in",
+      "Restart your router"
+    ]
+  },
+  "checkFirewall": {
+    "findings": [
+      "Windows Firewall is enabled and protecting your computer",
+      "Some firewall rules are blocking connections"
+    ],
+    "recommendations": []
+  },
+  "checkProxySettings": {
+    "findings": [
+      "No proxy server configured - direct internet connection"
+    ],
+    "recommendations": []
+  }
+}
+Calling Claude API...
+Client available: true
+Client.messages available: true
+✅ Successfully parsed JSON with 3 issues and 3 fixes
+📊 DIAGNOSTIC RESULTS:
+  - Issues: 3
+  - Fixes: 3
+  - Analysis type: object
+  - Analysis.summary: Your hard drive is healthy now, but there was a gaming app crash and Steam won't start. These are ea
+
+✅ SUCCESS!
+Analysis: {
+  "summary": "Your hard drive is healthy now, but there was a gaming app crash and Steam won't start. These are easy to fix.",
+  "issues": [
+    {
+      "severity": "warning",
+      "title": "Xbox Game Bar crashed recently",
+      "description": "The Xbox gaming overlay crashed 5 days ago due to your graphics driver.",
+      "whatThisMeans": "This was a one-time crash, not happening anymore, but we can prevent it.",
+      "foundEvidence": "Found a crash report from November 15th showing Xbox Game Bar stopped working"
+    },
+    {
+      "severity": "warning",
+      "title": "Steam won't start automatically",
+      "description": "Steam's background service times out when your computer starts up.",
+      "whatThisMeans": "Steam might take longer to open, or you need to start it manually.",
+      "foundEvidence": "Windows tried to start Steam service but it took too long and gave up"
+    },
+    {
+      "severity": "info",
+      "title": "Your hard drive is healthy",
+      "description": "Found old error messages about bad blocks, but your drive is currently fine.",
+      "whatThisMeans": "Those errors were from yesterday and are already fixed automatically by your drive.",
+      "foundEvidence": "Health check shows your Samsung SSD is working perfectly with no problems"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "update-graphics-driver",
+      "title": "Update your graphics card driver",
+      "whyThis": "A newer driver will prevent Xbox Game Bar and games from crashing.",
+      "howLong": "10 minutes",
+      "difficulty": "Easy",
+      "needsRestart": true,
+      "automatable": false,
+      "riskLevel": "low",
+      "steps": [
+        "Open your web browser and go to nvidia.com/download",
+        "Select 'GeForce RTX 2060' from the list",
+        "Click 'Search' then download the latest driver",
+        "Run the downloaded file and follow the installer",
+        "Restart your computer when it finishes"
+      ],
+      "technicalDetails": {
+        "commands": [],
+        "filesModified": [
+          "Graphics driver files in C:\\Windows\\System32\\DriverStore"
+        ],
+        "prerequisites": [
+          "Internet connection required",
+          "Will need to restart computer after installation"
+        ],
+        "expectedOutcome": "Xbox Game Bar and games will run more smoothly without crashes",
+        "verification": [
+          "Open Xbox Game Bar (press Windows key + G) and check if it opens without errors",
+          "Try playing a game to see if it runs smoothly"
+        ],
+        "rollback": [
+          "Use Windows Device Manager to roll back to previous driver version",
+          "Right-click Start menu, select Device Manager, find Display adapters, right-click your graphics card, choose Properties, Driver tab, Roll Back Driver"
+        ]
+      }
+    },
+    {
+      "id": "reset-steam-service",
+      "title": "Fix Steam startup service",
+      "whyThis": "This will make Steam start properly without timing out.",
+      "howLong": "2 minutes",
+      "difficulty": "Easy",
+      "needsRestart": false,
+      "automatable": true,
+      "riskLevel": "low",
+      "steps": [
+        "Press Windows key and type 'services'",
+        "Click on 'Services' app that appears",
+        "Scroll down and find 'Steam Client Service'",
+        "Right-click it and choose 'Restart'",
+        "Close the Services window"
+      ],
+      "technicalDetails": {
+        "commands": [
+          "Restart-Service -Name 'Steam Client Service' -Force"
+        ],
+        "filesModified": [
+          "No files modified, only restarts the Steam background service"
+        ],
+        "prerequisites": [
+          "Steam should be closed before restarting the service",
+          "Administrator privileges required"
+        ],
+        "expectedOutcome": "Steam will start normally when you open it or when computer boots",
+        "verification": [
+          "Open Steam and check if it starts without delays",
+          "Restart your computer and see if Steam appears in system tray quickly"
+        ],
+        "rollback": [
+          "If Steam won't open after this, restart your computer",
+          "Steam will automatically recreate the service on next launch"
+        ]
+      }
+    },
+    {
+      "id": "clear-old-crash-dumps",
+      "title": "Delete old crash reports to free space",
+      "whyThis": "Old crash files take up space and aren't needed anymore.",
+      "howLong": "1 minute",
+      "difficulty": "Easy",
+      "needsRestart": false,
+      "automatable": true,
+      "riskLevel": "low",
+      "steps": [
+        "Press Windows key and type 'Disk Cleanup'",
+        "Click on 'Disk Cleanup' app",
+        "Check the box next to 'System error memory dump files'",
+        "Click 'OK' then 'Delete Files'",
+        "Wait for cleanup to finish"
+      ],
+      "technicalDetails": {
+        "commands": [
+          "Remove-Item -Path \"$env:LOCALAPPDATA\\CrashDumps\\*.dmp\" -Force -ErrorAction SilentlyContinue"
+        ],
+        "filesModified": [
+          "C:\\Users\\kobri\\AppData\\Local\\CrashDumps\\XboxGameBarWidgets.exe.17912.dmp"
+        ],
+        "prerequisites": [
+          "No applications should be currently crashed or debugging"
+        ],
+        "expectedOutcome": "Frees up about 43 MB of disk space by removing old crash dumps",
+        "verification": [
+          "Check the CrashDumps folder - it should be empty or much smaller"
+        ],
+        "rollback": [
+          "Cannot undo - crash dumps will be recreated if programs crash again",
+          "This is safe because crash dumps are just old error reports"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "problemType": "slow",
+  "timestamp": "2025-11-18T23:19:56.545Z",
+  "investigations": {
+    "checkStartupPrograms": {
+      "findings": [
+        "Startup programs check - Coming soon"
+      ],
+      "recommendations": []
+    },
+    "analyzeDiskSpace": {
+      "disks": [
+        {
+          "name": "1999722508288",
+          "freeSpace": 659014569984,
+          "totalSpace": null,
+          "freeSpaceGB": "613.76",
+          "totalSpaceGB": "NaN"
+        }
+      ],
+      "lowSpaceWarnings": [],
+      "recommendations": []
+    },
+    "checkRAMUsage": {
+      "findings": [
+        "RAM usage check - Coming soon"
+      ],
+      "recommendations": []
+    },
+    "analyzeDiskHealth": {
+      "findings": [
+        "Disk health analysis - Coming soon"
+      ],
+      "recommendations": []
+    },
+    "checkBackgroundProcesses": {
+      "findings": [
+        "Background process check - Coming soon"
+      ],
+      "recommendations": []
+    },
+    "scanTempFiles": {
+      "findings": [
+        "Temp files scan - Coming soon"
+      ],
+      "recommendations": []
+    }
+  },
+  "analysis": {
+    "summary": "Your computer's speed check is still running. We have some basic info, but need more details to find what's slowing it down.",
+    "issues": [
+      {
+        "severity": "info",
+        "title": "Speed Check Still In Progress",
+        "description": "The tools are still gathering information about what's slowing down your computer.",
+        "whatThisMeans": "We can't give specific advice yet because the checking isn't finished.",
+        "foundEvidence": "Most tests show they're still working on collecting information"
+      }
+    ],
+    "fixes": [
+      {
+        "id": "wait-for-diagnostics",
+        "title": "Wait for the Full Check to Finish",
+        "whyThis": "We need complete results to find the real problem slowing you down.",
+        "howLong": "5-10 minutes",
+        "difficulty": "Easy",
+        "needsRestart": false,
+        "automatable": false,
+        "riskLevel": "low",
+        "steps": [
+          "Let the computer finish checking itself",
+          "Come back in about 10 minutes",
+          "We'll have specific fixes once the check is done"
+        ],
+        "technicalDetails": {
+          "commands": [
+            "No commands needed - diagnostics are still running"
+          ],
+          "filesModified": [
+            "No files will be modified"
+          ],
+          "prerequisites": [
+            "Diagnostic scan already in progress"
+          ],
+          "expectedOutcome": "Complete diagnostic results will be available showing startup programs, memory usage, background processes, and temporary files",
+          "verification": [
+            "Check back to see if all diagnostic sections show actual results instead of 'Coming soon'"
+          ],
+          "rollback": [
+            "No rollback needed - this is just waiting for information"
+          ]
+        }
+      },
+      {
+        "id": "quick-restart",
+        "title": "Restart Your Computer While Waiting",
+        "whyThis": "A fresh start often speeds things up and clears out stuck programs.",
+        "howLong": "5 minutes",
+        "difficulty": "Easy",
+        "needsRestart": true,
+        "automatable": false,
+        "riskLevel": "low",
+        "steps": [
+          "Save any work you have open",
+          "Click the Start button",
+          "Click Power, then Restart",
+          "Wait for your computer to turn back on"
+        ],
+        "technicalDetails": {
+          "commands": [
+            "shutdown /r /t 0"
+          ],
+          "filesModified": [
+            "No permanent files modified",
+            "Clears temporary memory contents"
+          ],
+          "prerequisites": [
+            "Save all open documents and close programs"
+          ],
+          "expectedOutcome": "Computer restarts fresh, clearing memory and stopping background processes that may be causing slowness",
+          "verification": [
+            "Computer should feel more responsive after restarting",
+            "Check Task Manager to see if fewer programs are running"
+          ],
+          "rollback": [
+            "No rollback needed - restart is completely safe and reversible"
+          ]
+        }
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "wait-for-diagnostics",
+      "title": "Wait for the Full Check to Finish",
+      "whyThis": "We need complete results to find the real problem slowing you down.",
+      "howLong": "5-10 minutes",
+      "difficulty": "Easy",
+      "needsRestart": false,
+      "automatable": false,
+      "riskLevel": "low",
+      "steps": [
+        "Let the computer finish checking itself",
+        "Come back in about 10 minutes",
+        "We'll have specific fixes once the check is done"
+      ],
+      "technicalDetails": {
+        "commands": [
+          "No commands needed - diagnostics are still running"
+        ],
+        "filesModified": [
+          "No files will be modified"
+        ],
+        "prerequisites": [
+          "Diagnostic scan already in progress"
+        ],
+        "expectedOutcome": "Complete diagnostic results will be available showing startup programs, memory usage, background processes, and temporary files",
+        "verification": [
+          "Check back to see if all diagnostic sections show actual results instead of 'Coming soon'"
+        ],
+        "rollback": [
+          "No rollback needed - this is just waiting for information"
+        ]
+      }
+    },
+    {
+      "id": "quick-restart",
+      "title": "Restart Your Computer While Waiting",
+      "whyThis": "A fresh start often speeds things up and clears out stuck programs.",
+      "howLong": "5 minutes",
+      "difficulty": "Easy",
+      "needsRestart": true,
+      "automatable": false,
+      "riskLevel": "low",
+      "steps": [
+        "Save any work you have open",
+        "Click the Start button",
+        "Click Power, then Restart",
+        "Wait for your computer to turn back on"
+      ],
+      "technicalDetails": {
+        "commands": [
+          "shutdown /r /t 0"
+        ],
+        "filesModified": [
+          "No permanent files modified",
+          "Clears temporary memory contents"
+        ],
+        "prerequisites": [
+          "Save all open documents and close programs"
+        ],
+        "expectedOutcome": "Computer restarts fresh, clearing memory and stopping background processes that may be causing slowness",
+        "verification": [
+          "Computer should feel more responsive after restarting",
+          "Check Task Manager to see if fewer programs are running"
+        ],
+        "rollback": [
+          "No rollback needed - restart is completely safe and reversible"
+        ]
+      }
+    }
+  ]
+}
