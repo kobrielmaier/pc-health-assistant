@@ -10,7 +10,6 @@ build/
 *.AppImage
 
 # Environment variables
-.env
 .env.local
 
 # IDE
