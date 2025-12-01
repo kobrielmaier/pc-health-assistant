@@ -16,10 +16,26 @@ let mainWindow = null;
 function initAutoUpdater(window) {
   mainWindow = window;
 
+  // Log current version and packaged status
+  logger.info('AutoUpdater', 'Initializing auto-updater', {
+    currentVersion: app.getVersion(),
+    isPackaged: app.isPackaged,
+    platform: process.platform
+  });
+
   // Configure auto-updater
-  autoUpdater.autoDownload = false; // Don't auto-download, let user decide
-  autoUpdater.autoInstallOnAppQuit = true; // Install on quit if downloaded
+  autoUpdater.autoDownload = true; // Auto-download updates silently
+  autoUpdater.autoInstallOnAppQuit = true; // Install on quit automatically
   autoUpdater.allowDowngrade = false;
+  autoUpdater.allowPrerelease = false;
+
+  // Enable more detailed logging for debugging
+  autoUpdater.logger = {
+    info: (msg) => logger.info('AutoUpdater', msg),
+    warn: (msg) => logger.warn('AutoUpdater', msg),
+    error: (msg) => logger.error('AutoUpdater', msg),
+    debug: (msg) => logger.debug('AutoUpdater', msg)
+  };
 
   // Set up event handlers
   setupEventHandlers();
@@ -32,7 +48,7 @@ function initAutoUpdater(window) {
     checkForUpdates(true); // Silent check on startup
   }, 5000);
 
-  logger.info('AutoUpdater', 'Auto-updater initialized');
+  logger.info('AutoUpdater', 'Auto-updater initialized successfully');
 }
 
 /**
@@ -89,9 +105,30 @@ function setupEventHandlers() {
 
   // Error handling
   autoUpdater.on('error', (error) => {
-    logger.error('AutoUpdater', 'Update error', { error: error.message });
+    let userMessage = error.message;
+
+    // Provide more helpful error messages
+    if (error.message.includes('net::ERR_INTERNET_DISCONNECTED') ||
+        error.message.includes('net::ERR_NETWORK_CHANGED') ||
+        error.message.includes('ENOTFOUND')) {
+      userMessage = 'No internet connection. Please check your network and try again.';
+    } else if (error.message.includes('404') || error.message.includes('Not Found')) {
+      userMessage = 'Update server not found. Please try again later.';
+    } else if (error.message.includes('EACCES') || error.message.includes('permission')) {
+      userMessage = 'Permission denied. Please run the app as administrator.';
+    } else if (error.message.includes('sha512 checksum mismatch')) {
+      userMessage = 'Update file corrupted. Please try again.';
+    }
+
+    logger.error('AutoUpdater', 'Update error', {
+      error: error.message,
+      stack: error.stack,
+      userMessage
+    });
+
     sendToRenderer('update-error', {
-      error: error.message
+      error: userMessage,
+      technicalError: error.message
     });
   });
 }

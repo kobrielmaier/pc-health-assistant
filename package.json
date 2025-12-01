@@ -1,6 +1,6 @@
 {
   "name": "pc-health-assistant",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "AI-powered computer health diagnostics and repair assistant",
   "main": "src/main/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "dev": "concurrently \"npm run dev:react\" \"npm run dev:electron\"",
     "dev:react": "vite",
     "dev:electron": "electron .",
-    "build": "vite build && electron-builder",
+    "build": "vite build && electron-builder && node scripts/post-build.js",
+    "build:publish": "vite build && electron-builder --publish always && node scripts/post-build.js",
     "test": "jest"
   },
   "keywords": [
@@ -36,6 +37,7 @@
     "electron": "^28.0.0",
     "electron-builder": "^24.9.1",
     "postcss": "^8.4.32",
+    "rcedit": "^5.0.2",
     "tailwindcss": "^3.4.0",
     "vite": "^5.0.0"
   },
@@ -50,7 +52,9 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "requestedExecutionLevel": "requireAdministrator",
@@ -60,15 +64,20 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["x64", "arm64"]
+          "arch": [
+            "x64",
+            "arm64"
+          ]
         },
         {
           "target": "zip",
-          "arch": ["x64", "arm64"]
+          "arch": [
+            "x64",
+            "arm64"
+          ]
         }
       ],
       "category": "public.app-category.utilities",
-      "icon": "assets/icon.icns",
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": "entitlements.mac.plist",
@@ -92,7 +101,10 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "artifactName": "${productName}-Setup-${version}.exe"
+      "artifactName": "${productName}-Setup-${version}.exe",
+      "perMachine": true,
+      "allowElevation": true,
+      "runAfterFinish": true
     },
     "publish": {
       "provider": "github",
