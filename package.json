@@ -1,6 +1,6 @@
 {
   "name": "pc-health-assistant",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "AI-powered computer health diagnostics and repair assistant",
   "main": "src/main/index.js",
   "scripts": {
