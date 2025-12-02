@@ -9,8 +9,13 @@ build/
 *.dmg
 *.AppImage
 
-# Environment variables
-.env.local
+# Environment variables and secrets
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+config.local.json
 
 # IDE
 .vscode/
@@ -33,5 +38,8 @@ coverage/
 
 # Electron
 out/
-.env
 .claude/settings.local.json
+
+# API keys and tokens (never commit these!)
+*.token
+api-keys.json
