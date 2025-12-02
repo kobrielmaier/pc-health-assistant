@@ -27,6 +27,7 @@ jobs:
 
   build-macos:
     runs-on: macos-latest
+    needs: build-windows  # Run after Windows to avoid upload conflicts
     steps:
       - uses: actions/checkout@v4
 
