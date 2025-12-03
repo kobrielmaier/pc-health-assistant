@@ -1,6 +1,6 @@
 {
   "name": "pc-health-assistant",
-  "version": "0.1.5",
+  "version": "0.1.5-legacy",
   "description": "AI-powered computer health diagnostics and repair assistant",
   "main": "src/main/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
-    "electron": "^35.7.5",
+    "electron": "^28.3.3",
     "electron-builder": "^24.9.1",
     "postcss": "^8.4.32",
     "rcedit": "^5.0.2",
