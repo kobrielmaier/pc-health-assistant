@@ -11,7 +11,10 @@ build/
 
 # Environment variables and secrets
 .env
-.env.*
+.env.local
+.env.development
+.env.production
+!.env.example
 *.pem
 *.key
 secrets.json
@@ -43,3 +46,9 @@ out/
 # API keys and tokens (never commit these!)
 *.token
 api-keys.json
+
+# Backend (Next.js)
+backend/.next/
+backend/node_modules/
+backend/.env
+backend/.env.local

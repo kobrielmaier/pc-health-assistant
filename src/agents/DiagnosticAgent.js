@@ -28,8 +28,8 @@ class DiagnosticAgent {
     }
 
     console.log('Initializing Anthropic client...');
-    console.log('API Key present:', !!process.env.ANTHROPIC_API_KEY);
-    console.log('API Key length:', process.env.ANTHROPIC_API_KEY?.length);
+    // SECURITY: Never log API key details - only log presence
+    console.log('API Key configured:', !!process.env.ANTHROPIC_API_KEY);
 
     this.client = new Anthropic({
       apiKey: process.env.ANTHROPIC_API_KEY

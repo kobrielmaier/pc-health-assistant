@@ -8,6 +8,7 @@ import About from './About';
 import Welcome from './Welcome';
 import LogViewer from './LogViewer';
 import UpdateNotification from './UpdateNotification';
+import Settings from './Settings';
 
 // Problem type options for users to choose from
 const PROBLEM_TYPES = [
@@ -60,11 +61,13 @@ function App() {
   const [showChat, setShowChat] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
   const [showLogViewer, setShowLogViewer] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
   const [proposedFix, setProposedFix] = useState(null); // AI-proposed fix from diagnosis
   const [isAdmin, setIsAdmin] = useState(null); // null = checking, true = admin, false = not admin
   const [appVersion, setAppVersion] = useState('0.1.0');
+  const [hasApiKey, setHasApiKey] = useState(null); // null = checking
 
-  // Check admin status and get app version on mount
+  // Check admin status, API key, and get app version on mount
   useEffect(() => {
     const checkAdminStatus = async () => {
       try {
@@ -76,6 +79,18 @@ function App() {
       }
     };
     checkAdminStatus();
+
+    // Check if API key is configured
+    const checkApiKey = async () => {
+      try {
+        const settings = await window.pcHealthAPI.getSettings();
+        setHasApiKey(settings.hasApiKey);
+      } catch (error) {
+        console.error('Failed to check API key:', error);
+        setHasApiKey(false);
+      }
+    };
+    checkApiKey();
 
     // Get app version
     if (window.pcHealthAPI?.getAppVersion) {
@@ -200,6 +215,12 @@ function App() {
               onClick={() => setCurrentView('conversational')}
             >
               💬 AI Assistant
+            </button>
+            <button
+              className={`history-nav-button ${!hasApiKey ? 'needs-attention' : ''}`}
+              onClick={() => setShowSettings(true)}
+            >
+              ⚙️ Settings
             </button>
             {currentView === 'home' && (
               <>
@@ -443,6 +464,38 @@ function App() {
 
       {/* Update Notification */}
       <UpdateNotification />
+
+      {/* Settings Modal */}
+      {showSettings && (
+        <Settings
+          onClose={() => {
+            setShowSettings(false);
+            // Refresh API key status when closing settings
+            window.pcHealthAPI.getSettings().then(settings => {
+              setHasApiKey(settings.hasApiKey);
+            }).catch(console.error);
+          }}
+        />
+      )}
+
+      {/* API Key Required Banner */}
+      {hasApiKey === false && currentView === 'home' && (
+        <div className="api-key-banner">
+          <div className="api-key-banner-content">
+            <span className="api-key-banner-icon">🔑</span>
+            <div className="api-key-banner-text">
+              <strong>API Key Required</strong>
+              <p>Configure your API key in Settings to use AI-powered diagnostics.</p>
+            </div>
+            <button
+              className="api-key-banner-button"
+              onClick={() => setShowSettings(true)}
+            >
+              Configure Now
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

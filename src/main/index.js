@@ -6,12 +6,8 @@
 const path = require('path');
 const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage } = require('electron');
 
-// Load environment variables from .env file FIRST
-// In production, .env is in resources folder; in dev, it's in project root
-const envPath = app.isPackaged
-  ? path.join(process.resourcesPath, '.env')
-  : path.join(__dirname, '../../.env');
-require('dotenv').config({ path: envPath });
+// Note: API keys are now managed via electron-store, not .env files
+// The backend handles Anthropic API calls; desktop app uses user API keys
 
 // Initialize Sentry crash reporting as early as possible
 const sentry = require('./sentry');
@@ -25,6 +21,17 @@ const { logger } = require('./logger');
 const { ReportGenerator } = require('./reportGenerator');
 const { initAutoUpdater } = require('./autoUpdater');
 
+// Initialize secure settings store for API keys
+const Store = require('electron-store');
+const settingsStore = new Store({
+  name: 'settings',
+  encryptionKey: 'pc-health-assistant-secure-storage', // Encrypts the store
+  defaults: {
+    apiKey: null,
+    backendUrl: 'https://pc-health-api.vercel.app'
+  }
+});
+
 console.log('PC Health Assistant - Main process started');
 console.log('Development mode:', isDev);
 console.log('App packaged:', app.isPackaged);
@@ -34,6 +41,7 @@ let tray = null;
 let chatAssistant = null;
 let conversationalAgent = null;
 let fixExecutor = null;
+let currentApiKey = settingsStore.get('apiKey');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -300,10 +308,21 @@ const toolLabels = {
 ipcMain.handle('start-diagnosis', async (event, problemType) => {
   console.log(`Starting AI-powered diagnosis for: ${problemType}`);
 
+  // Check for API key first
+  if (!currentApiKey) {
+    return {
+      success: false,
+      error: 'API key required. Please configure your API key in Settings.',
+      requiresApiKey: true
+    };
+  }
+
   // Use ConversationalDiagnosticAgent for ALL diagnostics (with auto-fix capability)
   if (!conversationalAgent) {
     const { ConversationalDiagnosticAgent } = require('../agents/ConversationalDiagnosticAgent');
-    conversationalAgent = new ConversationalDiagnosticAgent();
+    conversationalAgent = new ConversationalDiagnosticAgent(currentApiKey);
+  } else {
+    conversationalAgent.setApiKey(currentApiKey);
   }
 
   // Reset activity tracker for new diagnosis
@@ -450,10 +469,21 @@ ipcMain.handle('send-chat-message', async (event, message, context) => {
   console.log('Chat message received:', message);
   console.log('Diagnostic context:', context ? 'Provided' : 'None');
 
+  // Check for API key first
+  if (!currentApiKey) {
+    return {
+      success: false,
+      error: 'API key required. Please configure your API key in Settings.',
+      requiresApiKey: true
+    };
+  }
+
   // Lazy-load ChatAssistant
   if (!chatAssistant) {
     const { ChatAssistant } = require('../agents/ChatAssistant');
-    chatAssistant = new ChatAssistant();
+    chatAssistant = new ChatAssistant(currentApiKey);
+  } else {
+    chatAssistant.setApiKey(currentApiKey);
   }
 
   try {
@@ -487,11 +517,22 @@ ipcMain.handle('conversational-chat', async (event, message) => {
   console.log('Conversational diagnostic chat:', message);
   logger.info('Diagnostic', 'User started diagnostic chat', { message: message.substring(0, 100) });
 
+  // Check for API key first
+  if (!currentApiKey) {
+    return {
+      success: false,
+      error: 'API key required. Please configure your API key in Settings.',
+      requiresApiKey: true
+    };
+  }
+
   // Lazy-load Conversational Agent
   if (!conversationalAgent) {
     const { ConversationalDiagnosticAgent } = require('../agents/ConversationalDiagnosticAgent');
-    conversationalAgent = new ConversationalDiagnosticAgent();
+    conversationalAgent = new ConversationalDiagnosticAgent(currentApiKey);
     logger.info('Diagnostic', 'ConversationalDiagnosticAgent initialized');
+  } else {
+    conversationalAgent.setApiKey(currentApiKey);
   }
 
   // Reset activity tracker for new message processing
@@ -824,6 +865,107 @@ ipcMain.handle('report-message', async (event, message, level = 'info', context 
   } catch (err) {
     logger.error('Sentry', 'Failed to report message', { error: err.message });
     return { success: false, error: err.message };
+  }
+});
+
+// Settings IPC Handlers (API Key Management)
+ipcMain.handle('get-settings', async () => {
+  // SECURITY: Never expose any part of the API key - only boolean status
+  return {
+    hasApiKey: !!currentApiKey,
+    backendUrl: settingsStore.get('backendUrl')
+  };
+});
+
+ipcMain.handle('set-api-key', async (event, apiKey) => {
+  try {
+    // Validate the key format
+    if (!apiKey || !apiKey.startsWith('pch_')) {
+      return { success: false, error: 'Invalid API key format. Keys should start with pch_' };
+    }
+
+    // Validate the key with the backend
+    const { BackendClient } = require('../api/BackendClient');
+    const client = new BackendClient(apiKey, settingsStore.get('backendUrl'));
+    const validation = await client.validateKey();
+
+    if (!validation.valid) {
+      return { success: false, error: validation.error || 'Invalid API key' };
+    }
+
+    // Save the key
+    settingsStore.set('apiKey', apiKey);
+    currentApiKey = apiKey;
+
+    // Reset agents to use new key
+    if (chatAssistant) {
+      chatAssistant.setApiKey(apiKey);
+    }
+    if (conversationalAgent) {
+      conversationalAgent.setApiKey(apiKey);
+    }
+
+    logger.info('Settings', 'API key updated successfully');
+
+    return {
+      success: true,
+      user: validation.user,
+      usage: validation.usage
+    };
+  } catch (error) {
+    logger.error('Settings', 'Failed to set API key', { error: error.message });
+    return { success: false, error: error.message };
+  }
+});
+
+ipcMain.handle('remove-api-key', async () => {
+  settingsStore.delete('apiKey');
+  currentApiKey = null;
+
+  // Reset agents
+  chatAssistant = null;
+  conversationalAgent = null;
+
+  logger.info('Settings', 'API key removed');
+  return { success: true };
+});
+
+ipcMain.handle('validate-api-key', async () => {
+  if (!currentApiKey) {
+    return { valid: false, error: 'No API key configured' };
+  }
+
+  try {
+    const { BackendClient } = require('../api/BackendClient');
+    const client = new BackendClient(currentApiKey, settingsStore.get('backendUrl'));
+    return await client.validateKey();
+  } catch (error) {
+    return { valid: false, error: error.message };
+  }
+});
+
+ipcMain.handle('get-usage', async () => {
+  if (!currentApiKey) {
+    return { success: false, error: 'No API key configured' };
+  }
+
+  try {
+    const { BackendClient } = require('../api/BackendClient');
+    const client = new BackendClient(currentApiKey, settingsStore.get('backendUrl'));
+    const result = await client.validateKey();
+
+    if (!result.valid) {
+      return { success: false, error: result.error };
+    }
+
+    return {
+      success: true,
+      usage: result.usage,
+      limits: result.limits,
+      user: result.user
+    };
+  } catch (error) {
+    return { success: false, error: error.message };
   }
 });
 

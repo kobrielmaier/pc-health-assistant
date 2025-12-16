@@ -3,21 +3,36 @@
  * Handles free-form questions and provides personalized troubleshooting
  */
 
-const Anthropic = require('@anthropic-ai/sdk');
+const { BackendClient } = require('../api/BackendClient');
 const AuditLogger = require('../utils/AuditLogger');
 
 class ChatAssistant {
-  constructor() {
-    if (!process.env.ANTHROPIC_API_KEY) {
-      throw new Error('ANTHROPIC_API_KEY environment variable is required');
-    }
-
-    this.client = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY
-    });
-
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.client = null; // Initialized lazily when API key is available
     this.auditLogger = new AuditLogger();
     this.conversationHistory = [];
+  }
+
+  /**
+   * Set or update the API key
+   */
+  setApiKey(apiKey) {
+    this.apiKey = apiKey;
+    this.client = null; // Reset client to use new key
+  }
+
+  /**
+   * Get or create the backend client
+   */
+  getClient() {
+    if (!this.apiKey) {
+      throw new Error('API key is required. Please configure your API key in Settings.');
+    }
+    if (!this.client) {
+      this.client = new BackendClient(this.apiKey);
+    }
+    return this.client;
   }
 
   /**
@@ -36,10 +51,9 @@ class ChatAssistant {
     const systemPrompt = this.buildSystemPrompt(systemContext);
 
     try {
-      const response = await this.client.messages.create({
-        model: 'claude-sonnet-4-5-20250929',
+      const client = this.getClient();
+      const response = await client.messages.create({
         max_tokens: 8192,
-        temperature: 0,
         system: systemPrompt,
         messages: this.conversationHistory
       });

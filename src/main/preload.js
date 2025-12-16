@@ -122,7 +122,14 @@ contextBridge.exposeInMainWorld('pcHealthAPI', {
 
   // Error Reporting Methods
   reportError: (error, context) => ipcRenderer.invoke('report-error', error, context),
-  reportMessage: (message, level, context) => ipcRenderer.invoke('report-message', message, level, context)
+  reportMessage: (message, level, context) => ipcRenderer.invoke('report-message', message, level, context),
+
+  // Settings Methods (API Key Management)
+  getSettings: () => ipcRenderer.invoke('get-settings'),
+  setApiKey: (apiKey) => ipcRenderer.invoke('set-api-key', apiKey),
+  removeApiKey: () => ipcRenderer.invoke('remove-api-key'),
+  validateApiKey: () => ipcRenderer.invoke('validate-api-key'),
+  getUsage: () => ipcRenderer.invoke('get-usage')
 });
 
 console.log('Preload script loaded - API exposed to renderer');

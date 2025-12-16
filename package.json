@@ -111,12 +111,6 @@
       "owner": "kobrielmaier",
       "repo": "pc-health-assistant",
       "releaseType": "release"
-    },
-    "extraResources": [
-      {
-        "from": ".env",
-        "to": ".env"
-      }
-    ]
+    }
   }
 }

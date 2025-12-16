@@ -3,7 +3,7 @@
  * Works like chatting with Claude - investigates step-by-step, asks questions, proposes fixes
  */
 
-const Anthropic = require('@anthropic-ai/sdk');
+const { BackendClient } = require('../api/BackendClient');
 const { exec } = require('child_process');
 const util = require('util');
 const execPromise = util.promisify(exec);
@@ -16,14 +16,9 @@ const SystemResourceInvestigator = require('./investigators/SystemResourceInvest
 const { NetworkInvestigator } = require('./investigators/NetworkInvestigator');
 
 class ConversationalDiagnosticAgent {
-  constructor() {
-    if (!process.env.ANTHROPIC_API_KEY) {
-      throw new Error('ANTHROPIC_API_KEY environment variable is required');
-    }
-
-    this.client = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY
-    });
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.client = null; // Initialized lazily when API key is available
 
     this.conversationHistory = [];
     this.investigators = {
@@ -33,6 +28,27 @@ class ConversationalDiagnosticAgent {
       systemResource: new SystemResourceInvestigator(),
       network: new NetworkInvestigator()
     };
+  }
+
+  /**
+   * Set or update the API key
+   */
+  setApiKey(apiKey) {
+    this.apiKey = apiKey;
+    this.client = null; // Reset client to use new key
+  }
+
+  /**
+   * Get or create the backend client
+   */
+  getClient() {
+    if (!this.apiKey) {
+      throw new Error('API key is required. Please configure your API key in Settings.');
+    }
+    if (!this.client) {
+      this.client = new BackendClient(this.apiKey);
+    }
+    return this.client;
   }
 
   /**
@@ -53,10 +69,9 @@ class ConversationalDiagnosticAgent {
     let proposedFix = null;
 
     while (continueLoop) {
-      const response = await this.client.messages.create({
-        model: 'claude-sonnet-4-5-20250929',
+      const client = this.getClient();
+      const response = await client.messages.create({
         max_tokens: 8192,
-        temperature: 0,
         system: this.getSystemPrompt(),
         messages: this.conversationHistory,
         tools: this.getTools()
